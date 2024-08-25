@@ -58,15 +58,3 @@ class LRUCache:
         self._add(new_node)
         self.cache[key] = new_node
 
-
-if __name__ == "__main__":
-    cache = LRUCache(2)
-    cache.put(1, 1)
-    cache.put(2, 2)
-    print(cache.get(1))  # Output: 1
-    cache.put(3, 3)  # Evicts key 2
-    print(cache.get(2))  # Output: -1 (since key 2 was evicted)
-    cache.put(4, 4)  # Evicts key 1
-    print(cache.get(1))  # Output: -1 (since key 1 was evicted)
-    print(cache.get(3))  # Output: 3
-    print(cache.get(4))  # Output: 4
